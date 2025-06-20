@@ -1,0 +1,47 @@
+# Ignore Python cache files
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.pyc
+
+# Ignore virtual environments
+venv/
+.venv/
+env/
+ENV/
+
+# VS Code settings (optional, personal config)
+.vscode/
+
+# Ignore system-specific files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Ignore model files
+models/*.pkl
+models/*.joblib
+
+# Ignore resume and job description uploads
+resumes/*
+!resumes/.gitkeep
+
+job_descriptions/*
+!job_descriptions/.gitkeep
+
+# Ignore output files (results)
+output/*
+!output/.gitkeep
+
+# Ignore logs and temporary files
+*.log
+*.tmp
+*.bak
+
+# Ignore Jupyter checkpoints (if used)
+.ipynb_checkpoints/
+
+# Ignore local environment files
+.env
+.env.*

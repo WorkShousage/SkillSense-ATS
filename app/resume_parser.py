@@ -6,7 +6,6 @@ import spacy
 from datetime import datetime
 import json
 
-# Load English language model for spaCy
 nlp = spacy.load("en_core_web_sm")
 
 

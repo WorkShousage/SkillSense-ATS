@@ -5,6 +5,7 @@ import docx2txt
 import spacy
 from datetime import datetime
 import json
+import os
 from spacy.matcher import PhraseMatcher
 import logging
 from typing import List, Optional, Set, Dict
@@ -475,9 +476,17 @@ class ResumeParser:
 
 
 if __name__ == "__main__":
+
+    ROOT_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+
+    RESUME_PATH = os.path.join(ROOT_DIR, "resumes", "sample-resume.pdf")
+    OUTPUT_PATH = os.path.join(ROOT_DIR, "output", "parsed_resume.json")
+
+    os.makedirs(os.path.dirname(OUTPUT_PATH), exist_ok=True)
+
     parser = ResumeParser()
-    resume_data = parser.parse_resume("resumes/sample_resume.docx")
+    resume_data = parser.parse_resume(RESUME_PATH)
     print("Parsed Resume Data:")
     print(json.dumps(resume_data, indent=2))
-    parser.save_to_json(resume_data, "output/parsed_resume.json")
+    parser.save_to_json(resume_data, OUTPUT_PATH)
     print("\nSaved to 'parsed_resume.json'")
